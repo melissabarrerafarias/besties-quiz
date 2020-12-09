@@ -29,47 +29,56 @@ const chrisQuestions = [
         answer: "The Algebra",
     },
 
-    { 
-        question: "What is Chris's go to drink at restaurants?", 
-        choices: ["Sprite", "Ice tea with no ice", "Water", "Coke"], 
+    {
+        question: "What is Chris's go to drink at restaurants?",
+        choices: ["Sprite", "Ice tea with no ice", "Water", "Coke"],
         answer: "Ice tea with no ice"
     },
 
-    { 
-        question: "How did Chris get his name?", 
-        choices: ["Dad named him after dead relative", "Mom saw name in a baby-names book", "Randy really liked Whinnie the Pooh", "Close friend suggested it"], 
+    {
+        question: "How did Chris get his name?",
+        choices: ["Dad named him after dead relative", "Mom saw name in a baby-names book", "Randy really liked Whinnie the Pooh", "Close friend suggested it"],
         answer: "Randy really liked Whinnie the Pooh"
     },
 
     {
-        question: "Does his last name have a 'ñ' in it?", 
-        choices: ["Yes", "No", "Legally, no", "Legally yes but Chris never uses it"], 
+        question: "Does his last name have a 'ñ' in it?",
+        choices: ["Yes", "No", "Legally, no", "Legally yes but Chris never uses it"],
         answer: "Legally, no"
-    }, 
-
-    { 
-        question: "What is Chris's favorite color?", 
-        choices: ["Red", "Orange", "Pink", "Green"], 
-        answer: "Green"
-    }, 
+    },
 
     {
-        question: "What is Chris's favorite flower?", 
-        choices: ["Tulips", "Daisies", "Roses", "Sunflowers"], 
+        question: "What is Chris's favorite color?",
+        choices: ["Red", "Orange", "Pink", "Green"],
+        answer: "Green"
+    },
+
+    {
+        question: "What is Chris's favorite flower?",
+        choices: ["Tulips", "Daisies", "Roses", "Sunflowers"],
         answer: "Sunflowers"
     }
 ];
 
 const startBtn = document.getElementById("start");
 const rules = document.getElementById("rules");
-const quizContainer = document.createElement("div");
+
+// timer variables
+const seconds = document.createElement("p");
+let count = 60;
+
+// display question
+let questionDisplay = document.createElement("p");
+let currentQuestion = 0;
+
+
 
 
 function chooseQuiz() {
     console.log("hey this is still working");
     startBtn.className = "display-none";
     rules.innerHTML = "";
-    
+
     const chooseWho = document.createElement("p");
     chooseWho.textContent = "Who would you like to be quizzed on?"
     chooseWho.className = "header-text";
@@ -89,9 +98,69 @@ function chooseQuiz() {
     mikeyBtn.className = "btn btn-lg btn-outline-primary m-4 choose-who-text";
     melissaBtn.className = "btn btn-lg btn-outline-warning m-4 choose-who-text";
 
-    rules.append(chooseWho,chrisBtn, natalyBtn, mikeyBtn, melissaBtn);
+    rules.append(chooseWho, chrisBtn, natalyBtn, mikeyBtn, melissaBtn);
+
+    chrisBtn.addEventListener("click", function () {
+        console.log("hey this is chris");
+        chrisQuiz();
+    });
+
+    natalyBtn.addEventListener("click", function() {
+        console.log("hey this is nataly");
+    });
+
+    mikeyBtn.addEventListener("click", function() {
+        console.log("hey this is mikey");
+    });
+
+    melissaBtn.addEventListener("click", function() {
+        console.log("hey this is melissa");
+    })
+};
+
+chrisQuiz = function() {
+    let timer = setInterval(function () {
+        count--;
+        seconds.textContent = "Time left: " + count;
+        rules.appendChild(seconds);
+        if (count < 1) {
+            clearInterval(timer);
+            console.log("the game has ended");
+        }
+    }, 1000);
+    
+    rules.innerHTML = '';
+
+    let question = chrisQuestions[currentQuestion];
+    questionDisplay.textContent = question.question;
+    for (i = 0; i < question.choices.length; i++) {
+        let answersBtn = document.createElement("button");
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark";
+        answersBtn.textContent = question.choices[i];
+        rules.append(questionDisplay, answersBtn);
+        answersBtn.addEventListener("click", checkAnswer);
+    };
 }
 
-startBtn.addEventListener("click", function() {
+function checkAnswer(event) {
+    let chosenAnswer = event.target.textContent;
+    console.log({ chosenAnswer });
+    if (event.target.textContent === chrisQuestions[currentQuestion].answer) {
+        console.log("correct!");
+    }
+    else {
+        console.log("incorrect!");
+        // appendTime();
+    }
+    currentQuestion++;
+    if (currentQuestion < chrisQuestions.length) {
+        chrisQuiz();
+    }
+    else {
+        console.log("the game has ended!");
+    }
+}
+
+startBtn.addEventListener("click", function () {
     chooseQuiz();
-}); 
+});

@@ -59,3 +59,18 @@ const chrisQuestions = [
         answer: "Sunflowers"
     }
 ];
+
+let startBtn = document.getElementById("start");
+let rules = document.getElementById("rules");
+
+function chooseQuiz() {
+    console.log("hey this is still working");
+    startBtn.className = "display-none";
+    rules.className = "display-none";
+
+    
+}
+
+startBtn.addEventListener("click", function() {
+    chooseQuiz();
+}); 

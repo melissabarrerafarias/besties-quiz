@@ -60,15 +60,36 @@ const chrisQuestions = [
     }
 ];
 
-let startBtn = document.getElementById("start");
-let rules = document.getElementById("rules");
+const startBtn = document.getElementById("start");
+const rules = document.getElementById("rules");
+const quizContainer = document.createElement("div");
+
 
 function chooseQuiz() {
     console.log("hey this is still working");
     startBtn.className = "display-none";
-    rules.className = "display-none";
-
+    rules.innerHTML = "";
     
+    const chooseWho = document.createElement("p");
+    chooseWho.textContent = "Who would you like to be quizzed on?"
+    chooseWho.className = "header-text";
+
+    const chrisBtn = document.createElement("button");
+    const natalyBtn = document.createElement("button");
+    const mikeyBtn = document.createElement("button");
+    const melissaBtn = document.createElement("button");
+
+    chrisBtn.textContent = "Chris";
+    natalyBtn.textContent = "Nataly";
+    mikeyBtn.textContent = "Mikey";
+    melissaBtn.textContent = "Melissa";
+
+    chrisBtn.className = "btn btn-lg btn-outline-success m-4 choose-who-text";
+    natalyBtn.className = "btn btn-lg btn-outline-info m-4 choose-who-text";
+    mikeyBtn.className = "btn btn-lg btn-outline-primary m-4 choose-who-text";
+    melissaBtn.className = "btn btn-lg btn-outline-warning m-4 choose-who-text";
+
+    rules.append(chooseWho,chrisBtn, natalyBtn, mikeyBtn, melissaBtn);
 }
 
 startBtn.addEventListener("click", function() {

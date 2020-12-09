@@ -21,3 +21,8 @@
 .display-none {
     display: none;
 }
+
+.choose-who-text {
+    font-family: 'East Sea Dokdo', cursive;
+    font-size: 25px;
+}

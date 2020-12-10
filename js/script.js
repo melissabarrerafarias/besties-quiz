@@ -62,13 +62,17 @@ const chrisQuestions = [
 
 const startBtn = document.getElementById("start");
 const rules = document.getElementById("rules");
+const titleWarning = document.getElementById("warning");
 
 // timer variables
 const seconds = document.createElement("p");
+seconds.className = "timer";
 let count = 60;
 
 // display question
+
 let questionDisplay = document.createElement("p");
+questionDisplay.className = "question-text";
 let currentQuestion = 0;
 
 
@@ -101,7 +105,15 @@ function chooseQuiz() {
     rules.append(chooseWho, chrisBtn, natalyBtn, mikeyBtn, melissaBtn);
 
     chrisBtn.addEventListener("click", function () {
-        console.log("hey this is chris");
+        let timer = setInterval(function () {
+            count--;
+            seconds.textContent = "Time left: " + count;
+            titleWarning.appendChild(seconds);
+            if (count < 1) {
+                clearInterval(timer);
+                console.log("the game has ended");
+            }
+        }, 1000);
         chrisQuiz();
     });
 
@@ -119,30 +131,24 @@ function chooseQuiz() {
 };
 
 chrisQuiz = function() {
-    let timer = setInterval(function () {
-        count--;
-        seconds.textContent = "Time left: " + count;
-        rules.appendChild(seconds);
-        if (count < 1) {
-            clearInterval(timer);
-            console.log("the game has ended");
-        }
-    }, 1000);
-    
     rules.innerHTML = '';
 
     let question = chrisQuestions[currentQuestion];
     questionDisplay.textContent = question.question;
+
+    rules.appendChild(questionDisplay);
+   
     for (i = 0; i < question.choices.length; i++) {
+        
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
         answersBtn.textContent = question.choices[i];
-        rules.append(questionDisplay, answersBtn);
-        answersBtn.addEventListener("click", checkAnswer);
+        rules.append(answersBtn);
+        answersBtn.addEventListener("click", chrisCheckAnswer);
     };
 }
 
-function checkAnswer(event) {
+function chrisCheckAnswer(event) {
     let chosenAnswer = event.target.textContent;
     console.log({ chosenAnswer });
     if (event.target.textContent === chrisQuestions[currentQuestion].answer) {

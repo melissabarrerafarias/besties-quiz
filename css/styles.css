@@ -27,6 +27,14 @@
     font-size: 25px;
 }
 
+.question-text {
+    display: inline-block;
+}
+
+.timer {
+    margin-bottom: 0px;
+}
+
 .choices-class {
     font-size: 10px; 
     font-family: 'Source Code Pro';

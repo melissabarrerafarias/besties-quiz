@@ -110,6 +110,7 @@ function chooseQuiz() {
             seconds.textContent = "Time left: " + count;
             titleWarning.appendChild(seconds);
             if (count < 1) {
+                count = 0;
                 clearInterval(timer);
                 console.log("the game has ended");
             }
@@ -156,7 +157,7 @@ function chrisCheckAnswer(event) {
     }
     else {
         console.log("incorrect!");
-        // appendTime();
+        appendTime();
     }
     currentQuestion++;
     if (currentQuestion < chrisQuestions.length) {
@@ -164,8 +165,19 @@ function chrisCheckAnswer(event) {
     }
     else {
         console.log("the game has ended!");
+        endQuiz();
     }
 }
+
+// time penalty
+function appendTime() {
+    count -= 10;
+}
+
+function endQuiz() {
+    console.log("this is where the score would go");
+}
+
 
 startBtn.addEventListener("click", function () {
     chooseQuiz();

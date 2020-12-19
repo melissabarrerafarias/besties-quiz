@@ -69,6 +69,15 @@ const seconds = document.createElement("p");
 seconds.className = "timer";
 let count = 60;
 
+// score variable
+let score = 0;
+
+const currentScore = document.createElement("p");
+currentScore.className = "timer";
+
+
+
+
 // display question
 
 let questionDisplay = document.createElement("p");
@@ -109,38 +118,41 @@ function chooseQuiz() {
             count--;
             seconds.textContent = "Time left: " + count;
             titleWarning.appendChild(seconds);
-            if (count < 1) {
-                count = 0;
+            if (count < 0) {
                 clearInterval(timer);
                 console.log("the game has ended");
             }
+            chrisQuiz();
         }, 1000);
-        chrisQuiz();
+        
     });
 
-    natalyBtn.addEventListener("click", function() {
+    natalyBtn.addEventListener("click", function () {
         console.log("hey this is nataly");
     });
 
-    mikeyBtn.addEventListener("click", function() {
+    mikeyBtn.addEventListener("click", function () {
         console.log("hey this is mikey");
     });
 
-    melissaBtn.addEventListener("click", function() {
+    melissaBtn.addEventListener("click", function () {
         console.log("hey this is melissa");
     })
 };
 
 chrisQuiz = function() {
     rules.innerHTML = '';
+   
+    currentScore.textContent = `Your score : ${score}`;
+    titleWarning.appendChild(currentScore);
 
     let question = chrisQuestions[currentQuestion];
     questionDisplay.textContent = question.question;
 
     rules.appendChild(questionDisplay);
-   
+
     for (i = 0; i < question.choices.length; i++) {
-        
+
         let answersBtn = document.createElement("button");
         answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
         answersBtn.textContent = question.choices[i];
@@ -154,9 +166,11 @@ function chrisCheckAnswer(event) {
     console.log({ chosenAnswer });
     if (event.target.textContent === chrisQuestions[currentQuestion].answer) {
         console.log("correct!");
+        addPoints();
     }
     else {
         console.log("incorrect!");
+        removePoints();
         appendTime();
     }
     currentQuestion++;
@@ -172,6 +186,21 @@ function chrisCheckAnswer(event) {
 // time penalty
 function appendTime() {
     count -= 10;
+    if (count < 0) {
+        count = 0;
+    }
+}
+
+// add to score if question answered correctly
+function addPoints() {
+    score += 10;
+}
+
+function removePoints() {
+    score -= 10;
+    if (score < 0) {
+        score = 0;
+    }
 }
 
 function endQuiz() {

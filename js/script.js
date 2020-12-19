@@ -118,7 +118,8 @@ function chooseQuiz() {
             count--;
             seconds.textContent = "Time left: " + count;
             titleWarning.appendChild(seconds);
-            if (count < 0) {
+            if (count < 1) {
+                endQuiz();
                 clearInterval(timer);
                 console.log("the game has ended");
             }
@@ -164,19 +165,23 @@ chrisQuiz = function() {
 function chrisCheckAnswer(event) {
     let chosenAnswer = event.target.textContent;
     console.log({ chosenAnswer });
-    if (event.target.textContent === chrisQuestions[currentQuestion].answer) {
+
+    if (chosenAnswer === chrisQuestions[currentQuestion].answer) {
         console.log("correct!");
         addPoints();
     }
+
     else {
         console.log("incorrect!");
         removePoints();
         appendTime();
     }
     currentQuestion++;
+
     if (currentQuestion < chrisQuestions.length) {
         chrisQuiz();
     }
+
     else {
         console.log("the game has ended!");
         endQuiz();
@@ -186,7 +191,7 @@ function chrisCheckAnswer(event) {
 // time penalty
 function appendTime() {
     count -= 10;
-    if (count < 0) {
+    if (count < 0) {    
         count = 0;
     }
 }
@@ -205,6 +210,20 @@ function removePoints() {
 
 function endQuiz() {
     console.log("this is where the score would go");
+    // timer
+    seconds.className = "display-none";
+    seconds.className = "display-none";
+    // questions
+    rules.className = 'display-none';
+    // score
+    titleWarning.className = "display-none";
+
+    const scoreDiv = document.getElementById("scoreContainer");
+
+    const totalScore = document.createElement("h2");
+    totalScore.className = "scary-text";
+    totalScore.textContent = `Your final score is : ${score} points`;
+    scoreDiv.appendChild(totalScore);
 }
 
 

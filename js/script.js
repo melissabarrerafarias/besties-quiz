@@ -215,15 +215,22 @@ function endQuiz() {
     seconds.className = "display-none";
     // questions
     rules.className = 'display-none';
-    // score
+    // score 
     titleWarning.className = "display-none";
 
+    // final score showing
     const scoreDiv = document.getElementById("scoreContainer");
 
     const totalScore = document.createElement("h2");
     totalScore.className = "scary-text";
     totalScore.textContent = `Your final score is : ${score} points`;
-    scoreDiv.appendChild(totalScore);
+
+    const playAgainBtn = document.createElement("button");
+    playAgainBtn.className = "btn btn-lg btn-outline-danger";
+    playAgainBtn.textContent = "Play Again";
+
+
+    scoreDiv.append(totalScore, playAgainBtn);
 }
 
 

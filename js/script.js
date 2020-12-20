@@ -85,6 +85,12 @@ questionDisplay.className = "question-text";
 let currentQuestion = 0;
 
 
+const playAgainBtn = document.createElement("button");
+playAgainBtn.className = "btn btn-lg btn-outline-danger";
+playAgainBtn.textContent = "Play Again";
+
+
+
 
 
 function chooseQuiz() {
@@ -123,9 +129,8 @@ function chooseQuiz() {
                 clearInterval(timer);
                 console.log("the game has ended");
             }
-            chrisQuiz();
         }, 1000);
-        
+        chrisQuiz();
     });
 
     natalyBtn.addEventListener("click", function () {
@@ -148,11 +153,11 @@ chrisQuiz = function() {
     titleWarning.appendChild(currentScore);
 
     let question = chrisQuestions[currentQuestion];
-    questionDisplay.textContent = question.question;
-
+    
     rules.appendChild(questionDisplay);
 
     for (i = 0; i < question.choices.length; i++) {
+        questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
         answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
@@ -208,8 +213,9 @@ function removePoints() {
     }
 }
 
-function endQuiz() {
-    console.log("this is where the score would go");
+function endQuiz(timer) {
+    clearInterval(timer);
+
     // timer
     seconds.className = "display-none";
     seconds.className = "display-none";
@@ -225,13 +231,13 @@ function endQuiz() {
     totalScore.className = "scary-text";
     totalScore.textContent = `Your final score is : ${score} points`;
 
-    const playAgainBtn = document.createElement("button");
-    playAgainBtn.className = "btn btn-lg btn-outline-danger";
-    playAgainBtn.textContent = "Play Again";
-
-
     scoreDiv.append(totalScore, playAgainBtn);
 }
+
+playAgainBtn.addEventListener("click", function() {
+    rules.className = "display";
+    chooseQuiz();
+})
 
 
 startBtn.addEventListener("click", function () {

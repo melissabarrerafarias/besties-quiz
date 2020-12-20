@@ -75,16 +75,16 @@ let score = 0;
 const currentScore = document.createElement("p");
 currentScore.className = "timer";
 
-
-
-
 // display question
 
 let questionDisplay = document.createElement("p");
 questionDisplay.className = "question-text";
 let currentQuestion = 0;
 
+// show final score
+const scoreDiv = document.getElementById("scoreContainer");
 
+// play again ??
 const playAgainBtn = document.createElement("button");
 playAgainBtn.className = "btn btn-lg btn-outline-danger";
 playAgainBtn.textContent = "Play Again";
@@ -124,6 +124,9 @@ function chooseQuiz() {
             count--;
             seconds.textContent = "Time left: " + count;
             titleWarning.appendChild(seconds);
+
+            currentScore.textContent = `Your score : ${score}`;
+            titleWarning.appendChild(currentScore);
             if (count < 1) {
                 endQuiz();
                 clearInterval(timer);
@@ -146,14 +149,11 @@ function chooseQuiz() {
     })
 };
 
-chrisQuiz = function() {
+chrisQuiz = function () {
     rules.innerHTML = '';
-   
-    currentScore.textContent = `Your score : ${score}`;
-    titleWarning.appendChild(currentScore);
 
     let question = chrisQuestions[currentQuestion];
-    
+
     rules.appendChild(questionDisplay);
 
     for (i = 0; i < question.choices.length; i++) {
@@ -196,7 +196,7 @@ function chrisCheckAnswer(event) {
 // time penalty
 function appendTime() {
     count -= 10;
-    if (count < 0) {    
+    if (count < 0) {
         count = 0;
     }
 }
@@ -225,7 +225,6 @@ function endQuiz(timer) {
     titleWarning.className = "display-none";
 
     // final score showing
-    const scoreDiv = document.getElementById("scoreContainer");
 
     const totalScore = document.createElement("h2");
     totalScore.className = "scary-text";
@@ -234,7 +233,8 @@ function endQuiz(timer) {
     scoreDiv.append(totalScore, playAgainBtn);
 }
 
-playAgainBtn.addEventListener("click", function() {
+playAgainBtn.addEventListener("click", function () {
+    scoreDiv.className = "display-none";
     rules.className = "display";
     chooseQuiz();
 })

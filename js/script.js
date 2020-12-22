@@ -1,3 +1,4 @@
+// questions for chris's quiz
 const chrisQuestions = [
     {
         question: "What is Chris's favorite dog breed?",
@@ -60,6 +61,7 @@ const chrisQuestions = [
     }
 ];
 
+// questions for nataly's quiz
 const natalyQuestions = [
     {
         question: "What is Nataly's favorite Taylor Swift Album?",
@@ -121,6 +123,15 @@ const natalyQuestions = [
         answer: "Strawberry Acai"
     }
 ];
+
+// questions for melissa's quiz
+const melissaQuestions = [
+    {
+        question: "What is Melissa's favorite dog breed?", 
+        choices: ["Weiner Dog", "German Shepherd", "Dobermann", "Husky" ], 
+        answer: "Dobermann"
+    }
+]
 
 
 
@@ -274,16 +285,16 @@ function chrisCheckAnswer(event) {
 function natalyQuiz() {
     rules.innerHTML = '';
 
-    let natQuestion = natalyQuestions[currentQuestion];
+    let question = natalyQuestions[currentQuestion];
 
     rules.appendChild(questionDisplay);
 
-    for (i = 0; i < natQuestion.choices.length; i++) {
-        questionDisplay.textContent = natQuestion.question;
+    for (i = 0; i < question.choices.length; i++) {
+        questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
         answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
-        answersBtn.textContent = natQuestion.choices[i];
+        answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", natalyCheckAnswer);
     };
@@ -306,7 +317,7 @@ function natalyCheckAnswer(event) {
     currentQuestion++;
 
     if (currentQuestion < natalyQuestions.length) {
-        chrisQuiz();
+        natalyQuiz();
     }
 
     else {
@@ -350,7 +361,7 @@ function endQuiz(timer) {
 
     const totalScore = document.createElement("h2");
     totalScore.className = "scary-text";
-    totalScore.textContent = `Your final score is : ${score} points`;
+    totalScore.textContent = `Your final score is : ${score} / 100`;
 
     scoreDiv.append(totalScore, playAgainBtn);
 }

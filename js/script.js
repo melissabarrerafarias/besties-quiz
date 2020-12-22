@@ -130,9 +130,53 @@ const melissaQuestions = [
         question: "What is Melissa's favorite dog breed?", 
         choices: ["Weiner Dog", "German Shepherd", "Dobermann", "Husky" ], 
         answer: "Dobermann"
+    }, 
+    {
+        question: "How tall is Melissa?", 
+        choices: ["5'5", "5'8", "5'7", "5'6"], 
+        answer: "5'7"
+    },
+    {
+        question: "What is Melissa's favorite Bath and Body Works candle scent?", 
+        choices: ["Watermelon Lemonade", "Fresh Balsam", "Eucalyptus Rain", "Black Tie"], 
+        answer: "Fresh Balsam"
+    }, 
+    {
+        question: "Where would Melissa live, if she could?", 
+        choices: ["Ireland", "Greenland", "Canada", "France"], 
+        answer: "Canada"
+    }, 
+    {
+        question: "What is Melissa's dumb fear?", 
+        choices: ["Getting hand stuck in the garbage disposal", "Being alone in the dark", "Crashing into a deer", "Choking on a popcorn kernel"], 
+        answer: "Being alone in the dark"
+    }, 
+    {
+        question: "What is Melissa's favorite band?", 
+        choices: ["Cage the Elephant", "The 1975", "Wallows", "Coldplay" ], 
+        answer: "The 1975"
+    }, 
+    {
+        question: "What is Melissa's favorite animal?", 
+        choices: ["Anteater", "Red Panda", "Panda", "Black Bear"], 
+        answer: "Red Panda"
+    }, 
+    {
+        question: "If Melissa could choose to be one superhero, who would she be?", 
+        choices: ["The Wasp", "SpiderMan", "Doctor Strange", "Scarlett Witch"], 
+        answer: "Scarlett Witch"
+    }, 
+    {
+        question: "What is Melissa's preffered item of jewelry?", 
+        choices: ["Necklaces", "Earrings", "Rings", "Ankle Bracelets"], 
+        answer: "Earrings"
+    }, 
+    {
+        question: "Who was Melissa's first concert?", 
+        choices: ["The 1975", "Coldplay", "One Direction", "Taylor Swift"],
+        answer: "One Direction" 
     }
-]
-
+];
 
 
 const startBtn = document.getElementById("start");
@@ -212,7 +256,6 @@ function chooseQuiz() {
     });
 
     natalyBtn.addEventListener("click", function () {
-        console.log("hey this is nataly");
         let timer = setInterval(function () {
             count--;
             seconds.textContent = "Time left: " + count;
@@ -235,6 +278,20 @@ function chooseQuiz() {
 
     melissaBtn.addEventListener("click", function () {
         console.log("hey this is melissa");
+        let timer = setInterval(function () {
+            count--;
+            seconds.textContent = "Time left: " + count;
+            titleWarning.appendChild(seconds);
+
+            currentScore.textContent = `Your score : ${score}`;
+            titleWarning.appendChild(currentScore);
+            if (count < 1) {
+                endQuiz();
+                clearInterval(timer);
+                console.log("the game has ended");
+            }
+        }, 1000);
+        melissaQuiz();
     })
 };
 
@@ -325,6 +382,52 @@ function natalyCheckAnswer(event) {
         endQuiz();
     }
 }
+
+// melissa quiz
+function melissaQuiz() {
+    rules.innerHTML = '';
+
+    let question = melissaQuestions[currentQuestion];
+
+    rules.appendChild(questionDisplay);
+
+    for (i = 0; i < question.choices.length; i++) {
+        questionDisplay.textContent = question.question;
+
+        let answersBtn = document.createElement("button");
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
+        answersBtn.textContent = question.choices[i];
+        rules.append(answersBtn);
+        answersBtn.addEventListener("click", melissaCheckAnswer);
+    };
+}
+
+function melissaCheckAnswer(event) {
+    let chosenAnswer = event.target.textContent;
+    console.log({ chosenAnswer });
+
+    if (chosenAnswer === melissaQuestions[currentQuestion].answer) {
+        console.log("correct!");
+        addPoints();
+    }
+
+    else {
+        console.log("incorrect!");
+        removePoints();
+        appendTime();
+    }
+    currentQuestion++;
+
+    if (currentQuestion < melissaQuestions.length) {
+        melissaQuiz();
+    }
+
+    else {
+        console.log("the game has ended!");
+        endQuiz();
+    }
+}
+
 
 // time penalty
 function appendTime() {

@@ -197,7 +197,7 @@ currentScore.className = "timer";
 // display question
 
 let questionDisplay = document.createElement("p");
-questionDisplay.className = "question-text";
+questionDisplay.className = "question-text col-12";
 let currentQuestion = 0;
 
 // show final score
@@ -307,7 +307,7 @@ chrisQuiz = function () {
         questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
         answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", chrisCheckAnswer);
@@ -352,7 +352,7 @@ function natalyQuiz() {
         questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
         answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", natalyCheckAnswer);
@@ -397,7 +397,7 @@ function melissaQuiz() {
         questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
         answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", melissaCheckAnswer);

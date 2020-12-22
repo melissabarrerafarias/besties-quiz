@@ -295,6 +295,7 @@ function chooseQuiz() {
     })
 };
 
+// chris quiz
 chrisQuiz = function () {
     rules.innerHTML = '';
 
@@ -339,6 +340,7 @@ function chrisCheckAnswer(event) {
     }
 }
 
+// nataly quiz
 function natalyQuiz() {
     rules.innerHTML = '';
 

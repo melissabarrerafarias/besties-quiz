@@ -142,7 +142,7 @@ const titleWarning = document.getElementById("warning");
 // timer variables
 const seconds = document.createElement("p");
 seconds.className = "timer";
-let count = 60;
+let count = 120;
 
 // score variable
 let score = 0;
@@ -340,7 +340,7 @@ function addPoints() {
 }
 
 function removePoints() {
-    score -= 10;
+    score -= 5;
     if (score < 0) {
         score = 0;
     }

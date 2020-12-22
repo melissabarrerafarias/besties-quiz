@@ -60,6 +60,70 @@ const chrisQuestions = [
     }
 ];
 
+const natalyQuestions = [
+    {
+        question: "What is Nataly's favorite Taylor Swift Album?",
+        choices: ["Lover", "Folklore", "Red", "Reputation"],
+        answer: "Reputation"
+    },
+
+    {
+        question: "What is Nataly's favorite anime?",
+        choices: ["Attack On Titan", "Promised Neverland", "My Hero Academia", "Haikyu!!"],
+        answer: "Attack On Titan"
+    },
+
+    {
+        question: "What is Nataly's favorite TV show?",
+        choices: ["Gossip Girl", "Law and Order SVU", "Forensic Files", "Riverdale"],
+        answer: "Law and Order SVU"
+    },
+
+    {
+        question: "What is a place Nataly has always wanted to visit?",
+        choices: ["Egypt", "Greece", "Italy", "Tokyo"],
+        answer: "Greece"
+    },
+
+    {
+        question: "What is Nataly's biggest goal as a witness?",
+        choices: ["School of Evangelizers", "Bethelite", "Special Pioneer", "LDC"],
+        answer: "School of Evangelizers",
+    },
+
+    {
+        question: "What is Nataly's favorite Hunger Game's movie?",
+        choices: ["Catching Fire", "Mockingjay Pt 1", "Mockingjay Pt 2", "The Hunger Games"],
+        answer: "Catching Fire"
+    },
+
+    {
+        question: "How old was Nataly when she got baptized?",
+        choices: ["10", "12", "9", "8"],
+        answer: "9"
+    },
+
+    {
+        question: "What is Nataly's favorite number?",
+        choices: ["90", "13", "7", "15"],
+        answer: "15"
+    },
+
+    {
+        question: "What is Nataly's favorite season?",
+        choices: ["Spring", "Fall", "Summer", "Winter"],
+        answer: "Fall"
+    },
+
+    {
+        question: "What is Nataly's go to Starbucks drink?",
+        choices: ["Matcha Green Tea", "Cold Brew", "Strawberry Acai", "White Chocolate Mocha"],
+        answer: "Strawberry Acai"
+    }
+];
+
+
+
 const startBtn = document.getElementById("start");
 const rules = document.getElementById("rules");
 const titleWarning = document.getElementById("warning");
@@ -138,6 +202,20 @@ function chooseQuiz() {
 
     natalyBtn.addEventListener("click", function () {
         console.log("hey this is nataly");
+        let timer = setInterval(function () {
+            count--;
+            seconds.textContent = "Time left: " + count;
+            titleWarning.appendChild(seconds);
+
+            currentScore.textContent = `Your score : ${score}`;
+            titleWarning.appendChild(currentScore);
+            if (count < 1) {
+                endQuiz();
+                clearInterval(timer);
+                console.log("the game has ended");
+            }
+        }, 1000);
+        natalyQuiz();
     });
 
     mikeyBtn.addEventListener("click", function () {
@@ -184,6 +262,50 @@ function chrisCheckAnswer(event) {
     currentQuestion++;
 
     if (currentQuestion < chrisQuestions.length) {
+        chrisQuiz();
+    }
+
+    else {
+        console.log("the game has ended!");
+        endQuiz();
+    }
+}
+
+function natalyQuiz() {
+    rules.innerHTML = '';
+
+    let natQuestion = natalyQuestions[currentQuestion];
+
+    rules.appendChild(questionDisplay);
+
+    for (i = 0; i < natQuestion.choices.length; i++) {
+        questionDisplay.textContent = natQuestion.question;
+
+        let answersBtn = document.createElement("button");
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2";
+        answersBtn.textContent = natQuestion.choices[i];
+        rules.append(answersBtn);
+        answersBtn.addEventListener("click", natalyCheckAnswer);
+    };
+}
+
+function natalyCheckAnswer(event) {
+    let chosenAnswer = event.target.textContent;
+    console.log({ chosenAnswer });
+
+    if (chosenAnswer === natalyQuestions[currentQuestion].answer) {
+        console.log("correct!");
+        addPoints();
+    }
+
+    else {
+        console.log("incorrect!");
+        removePoints();
+        appendTime();
+    }
+    currentQuestion++;
+
+    if (currentQuestion < natalyQuestions.length) {
         chrisQuiz();
     }
 

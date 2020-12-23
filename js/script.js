@@ -1,57 +1,57 @@
 // questions for chris's quiz
 const chrisQuestions = [
     {
-        question: "What is Chris's favorite dog breed?",
-        choices: ["Beagle", "Golden Retriever", "Pug", "German Shepherd"],
-        answer: "Golden Retriever"
+        question: "How did Chris get the scar on his left leg?",
+        choices: ["Falling down the stairs", "During a basketball game", "Getting stuck on a fence", "Playing soccer in Mexico"],
+        answer: "Playing soccer in Mexico"
     },
 
     {
-        question: "What was Chris's favorite subject in school?",
-        choices: ["English", "Science", "Math", "PE"],
-        answer: "Math"
+        question: "What language would Chris like to learn?",
+        choices: ["English", "Chinese", "Vietnamese", "Italian"],
+        answer: "Vietnamese"
     },
 
     {
-        question: "What is Chris's favorite sport?",
-        choices: ["Soccer", "Volleyball", "Cheerleading", "Basketball"],
-        answer: "Basketball"
+        question: "What is Chris's favorite season?",
+        choices: ["Fall", "Spring", "Winter", "Summer"],
+        answer: "Winter"
     },
 
     {
-        question: "What is Chris's favorite place to eat?",
-        choices: ["In n Out", "Popeyes", "Taco Bell", "Chick fil A"],
-        answer: "In n Out"
+        question: "What is Chris's favorite music to listen to?",
+        choices: ["90's", "70's", "80's", "2000's"],
+        answer: "80's"
     },
 
     {
-        question: "What is Chris's signature dance move?",
-        choices: ["Stanky Leg", "The Whoa", "The Wave", "The Algebra"],
-        answer: "The Algebra",
+        question: "What is Chris's favorite ice cream flavor?",
+        choices: ["Chocolate", "Mint Chocolate", "Vanilla", "Strawberry"],
+        answer: "Mint Chocolate",
     },
 
     {
-        question: "What is Chris's go to drink at restaurants?",
-        choices: ["Sprite", "Ice tea with no ice", "Water", "Coke"],
-        answer: "Ice tea with no ice"
+        question: "What is Chris's favorite car?",
+        choices: ["Mustang", "Toyota", "Honda", "Porsche"],
+        answer: "Toyota"
     },
 
     {
-        question: "How did Chris get his name?",
-        choices: ["Dad named him after dead relative", "Mom saw name in a baby-names book", "Randy really liked Whinnie the Pooh", "Close friend suggested it"],
-        answer: "Randy really liked Whinnie the Pooh"
+        question: "What is Chris's favorite invention?",
+        choices: ["Loki Scepter", "Gauntlet", "Arc Reactor", "The whole Avengers set"],
+        answer: "The whole avengers set"
     },
 
     {
-        question: "Does his last name have a 'ñ' in it?",
-        choices: ["Yes", "No", "Legally, no", "Legally yes but Chris never uses it"],
-        answer: "Legally, no"
+        question: "What is Chris's favorite jacket?",
+        choices: ["Winter coat", "Leather jacket", "Fur Coat", "Robe"],
+        answer: "Winter coat"
     },
 
     {
-        question: "What is Chris's favorite color?",
-        choices: ["Red", "Orange", "Pink", "Green"],
-        answer: "Green"
+        question: "What is Chris's favorite shoes?",
+        choices: ["Running Shoes", "Basketball Shoes", "Pantuflas", "PF Flyers"],
+        answer: "Basketball Shoes"
     },
 
     {
@@ -64,117 +64,170 @@ const chrisQuestions = [
 // questions for nataly's quiz
 const natalyQuestions = [
     {
-        question: "What is Nataly's favorite Taylor Swift Album?",
-        choices: ["Lover", "Folklore", "Red", "Reputation"],
-        answer: "Reputation"
+        question: "Why does Nataly look up to her dad?",
+        choices: ["Patience and Love", "Knowledgeable, Reliable, and Logical", "Understanding and Caring", "Caring and Involved"],
+        answer: "Knowledgeable, Reliable, and Logical"
     },
 
     {
-        question: "What is Nataly's favorite anime?",
-        choices: ["Attack On Titan", "Promised Neverland", "My Hero Academia", "Haikyu!!"],
-        answer: "Attack On Titan"
+        question: "If not a cosmetoligist, what would Nataly be?",
+        choices: ["Accountant", "Fashion Designer", "Writer", "Therapist"],
+        answer: "Writer"
     },
 
     {
-        question: "What is Nataly's favorite TV show?",
-        choices: ["Gossip Girl", "Law and Order SVU", "Forensic Files", "Riverdale"],
-        answer: "Law and Order SVU"
+        question: "What is Nataly's aesthetic?",
+        choices: ["Preppy", "Grundge", "Granola Girl", "Emo"],
+        answer: "Preppy"
     },
 
     {
-        question: "What is a place Nataly has always wanted to visit?",
-        choices: ["Egypt", "Greece", "Italy", "Tokyo"],
-        answer: "Greece"
+        question: "When did Nataly start dying her hair?",
+        choices: ["14", "13", "15", "16"],
+        answer: "14"
     },
 
     {
-        question: "What is Nataly's biggest goal as a witness?",
-        choices: ["School of Evangelizers", "Bethelite", "Special Pioneer", "LDC"],
-        answer: "School of Evangelizers",
+        question: "What is Nataly's dream proposal?",
+        choices: ["Campfire Proposal", "Disneyland in the Summer", "Disneyland in the Winter", "Sunset Proposal"],
+        answer: "Disneyland in the Winter",
     },
 
     {
-        question: "What is Nataly's favorite Hunger Game's movie?",
-        choices: ["Catching Fire", "Mockingjay Pt 1", "Mockingjay Pt 2", "The Hunger Games"],
-        answer: "Catching Fire"
+        question: "What is Nataly's favorite Star Wars character?",
+        choices: ["Ahsoka Tano", "Padme", "Anakin", "Obi-Wan"],
+        answer: "Ahsoka Tano"
     },
 
     {
-        question: "How old was Nataly when she got baptized?",
-        choices: ["10", "12", "9", "8"],
-        answer: "9"
+        question: "What is Nataly's biggest fear in life?",
+        choices: ["Dying alone", "Falling off a rollercoaster", "Everyone hating her", "Falling into a ditch"],
+        answer: "Everyone hating her"
     },
 
     {
-        question: "What is Nataly's favorite number?",
-        choices: ["90", "13", "7", "15"],
-        answer: "15"
+        question: "What is Nataly's go to karaoke song?",
+        choices: ["Tierra Ajena", "Getaway Car", "White Horse", "Noviembre Sin Ti"],
+        answer: "Tierra Ajena"
     },
 
     {
-        question: "What is Nataly's favorite season?",
-        choices: ["Spring", "Fall", "Summer", "Winter"],
-        answer: "Fall"
+        question: "How often does Nataly wash her hair?",
+        choices: ["Three times a week", "Two times week", "Everyday", "Every other day"],
+        answer: "Three times a week"
     },
 
     {
-        question: "What is Nataly's go to Starbucks drink?",
-        choices: ["Matcha Green Tea", "Cold Brew", "Strawberry Acai", "White Chocolate Mocha"],
-        answer: "Strawberry Acai"
+        question: "What is one part of Nataly's body that is always cold?",
+        choices: ["Feet", "Hands", "Neck", "Nose"],
+        answer: "Handss"
     }
 ];
 
 // questions for melissa's quiz
 const melissaQuestions = [
     {
-        question: "What is Melissa's favorite dog breed?", 
-        choices: ["Weiner Dog", "German Shepherd", "Dobermann", "Husky" ], 
-        answer: "Dobermann"
+        question: "What is Melissa studying?", 
+        choices: ["App Development", "Fullstack Web Development", "Back-end Web Development", "Front-End Web Development" ], 
+        answer: "Fullstack Web Development"
     }, 
     {
-        question: "How tall is Melissa?", 
-        choices: ["5'5", "5'8", "5'7", "5'6"], 
-        answer: "5'7"
+        question: "What is Melissa's favorite childhood video game?", 
+        choices: ["Dance Dance Revolution", "Just Dance", "Minecraft", "Tomb Raider"], 
+        answer: "Tomb Raider"
     },
     {
-        question: "What is Melissa's favorite Bath and Body Works candle scent?", 
-        choices: ["Watermelon Lemonade", "Fresh Balsam", "Eucalyptus Rain", "Black Tie"], 
-        answer: "Fresh Balsam"
+        question: "What is Melissa's favorite makeup product?", 
+        choices: ["Concealer", "Eyeliner", "Eyeshadow", "Eyebrow Gel"], 
+        answer: "Eyeliner"
     }, 
     {
-        question: "Where would Melissa live, if she could?", 
-        choices: ["Ireland", "Greenland", "Canada", "France"], 
-        answer: "Canada"
+        question: "What was Melissa's childhood dream job?", 
+        choices: ["Doctor", "Astronaut", "Teacher", "Vet"], 
+        answer: "Teacher"
     }, 
     {
-        question: "What is Melissa's dumb fear?", 
-        choices: ["Getting hand stuck in the garbage disposal", "Being alone in the dark", "Crashing into a deer", "Choking on a popcorn kernel"], 
-        answer: "Being alone in the dark"
+        question: "In what grade did Melissa get her glasses?", 
+        choices: ["4th", "5th", "6th", "3rd"], 
+        answer: "6th"
     }, 
     {
-        question: "What is Melissa's favorite band?", 
-        choices: ["Cage the Elephant", "The 1975", "Wallows", "Coldplay" ], 
-        answer: "The 1975"
+        question: "What is Melissa's favorite kind of chocolate?", 
+        choices: ["Dark Chocolate", "Milk Chocolate", "White Chocolate", "Minty Chocolate" ], 
+        answer: "Dark Chocolate"
     }, 
     {
-        question: "What is Melissa's favorite animal?", 
-        choices: ["Anteater", "Red Panda", "Panda", "Black Bear"], 
-        answer: "Red Panda"
+        question: "Who is Melissa's favorite Star Wars droid?", 
+        choices: ["BB-8", "R2D2", "C3PO", "D-O"], 
+        answer: "BB-8"
     }, 
     {
-        question: "If Melissa could choose to be one superhero, who would she be?", 
-        choices: ["The Wasp", "SpiderMan", "Doctor Strange", "Scarlett Witch"], 
-        answer: "Scarlett Witch"
+        question: "What was one of Melissa's biggest insecurity growing up (ages 8-12)?", 
+        choices: ["Curly hair", "Height", "Weight", "Lips"], 
+        answer: "Curly hair"
     }, 
     {
-        question: "What is Melissa's preffered item of jewelry?", 
-        choices: ["Necklaces", "Earrings", "Rings", "Ankle Bracelets"], 
-        answer: "Earrings"
+        question: "Who was Melissa's favorite One Direction band member?", 
+        choices: ["Harry", "Louis", "Niall", "Zayn"], 
+        answer: "Zayn"
     }, 
     {
-        question: "Who was Melissa's first concert?", 
-        choices: ["The 1975", "Coldplay", "One Direction", "Taylor Swift"],
-        answer: "One Direction" 
+        question: "What grade did Melissa start homeschool?", 
+        choices: ["5th", "6th", "7th", "4th"],
+        answer: "7th" 
+    }
+];
+
+const marlynQuestions = [
+    {
+        question: "If Marlyn could move, what state would she move to?", 
+        choices: ["Wahington", "New York", "Arizona", "Texas" ], 
+        answer: "Washington"
+    }, 
+    {
+        question: "What is one language Marlyn would like to learn?", 
+        choices: ["Chinese", "French", "Italian", "Sign Language"], 
+        answer: "Sign Language"
+    },
+    {
+        question: "Who is Marlyn's favorite Disney princess?", 
+        choices: ["Belle", "Jasmine", "Rapunzel", "Cinderella"], 
+        answer: "Jasmine"
+    }, 
+    {
+        question: "Does Marlyn sleep with socks off or on?", 
+        choices: ["On", "Off", "Doesn't matter"], 
+        answer: "Off"
+    }, 
+    {
+        question: "How many kids does Marlyn want?", 
+        choices: ["5", "3 max", "3 min", "2"], 
+        answer: "3 max"
+    }, 
+    {
+        question: "When did Marlyn start doing her nails?", 
+        choices: ["Junior Year", "Sophomore Year", "Freshman Year", "Junior High" ], 
+        answer: "Sophomore Year"
+    }, 
+    {
+        question: "If Marlyn could play one instrument, what would it be?", 
+        choices: ["Violin", "Piano", "Guitar", "Trumpet"], 
+        answer: "Piano"
+    }, 
+    {
+        question: "What is something Marlyn would like to learn?", 
+        choices: ["Skateboard", "Draw realistically", "Cook", "Surf"], 
+        answer: "Skateboard"
+    }, 
+    {
+        question: "What kind of tacos does Marlyn get?", 
+        choices: ["Asada", "Buche", "Suadero", "Lengua"], 
+        answer: "Asada"
+    }, 
+    {
+        question: "What is Marlyn's favorite fast food place?", 
+        choices: ["In n Out", "Wendy's", "Jack in the Box", "Chick fil A"],
+        answer: "Wendy's" 
     }
 ];
 
@@ -225,18 +278,21 @@ function chooseQuiz() {
     const natalyBtn = document.createElement("button");
     const mikeyBtn = document.createElement("button");
     const melissaBtn = document.createElement("button");
+    const marlynBtn = document.createElement("button");
 
     chrisBtn.textContent = "Chris";
     natalyBtn.textContent = "Nataly";
     mikeyBtn.textContent = "Mikey";
     melissaBtn.textContent = "Melissa";
+    marlynBtn.textContent = "Marlyn";
 
     chrisBtn.className = "btn btn-lg btn-outline-success m-4 choose-who-text";
     natalyBtn.className = "btn btn-lg btn-outline-info m-4 choose-who-text";
     mikeyBtn.className = "btn btn-lg btn-outline-primary m-4 choose-who-text";
-    melissaBtn.className = "btn btn-lg btn-outline-warning m-4 choose-who-text";
+    melissaBtn.className = "btn btn-lg btn-outline-secondary m-4 choose-who-text";
+    marlynBtn.className = "btn btn-lg btn-outline-warning m-4 choose-who-text";
 
-    rules.append(chooseWho, chrisBtn, natalyBtn, mikeyBtn, melissaBtn);
+    rules.append(chooseWho, chrisBtn, natalyBtn, mikeyBtn, melissaBtn, marlynBtn);
 
     chrisBtn.addEventListener("click", function () {
         let timer = setInterval(function () {
@@ -292,7 +348,24 @@ function chooseQuiz() {
             }
         }, 1000);
         melissaQuiz();
-    })
+    }); 
+
+    marlynBtn.addEventListener("click", function () {
+        let timer = setInterval(function () {
+            count--;
+            seconds.textContent = "Time left: " + count;
+            titleWarning.appendChild(seconds);
+
+            currentScore.textContent = `Your score : ${score}`;
+            titleWarning.appendChild(currentScore);
+            if (count < 1) {
+                endQuiz();
+                clearInterval(timer);
+                console.log("the game has ended");
+            }
+        }, 1000);
+        marlynQuiz();
+    });
 };
 
 // chris quiz
@@ -422,6 +495,50 @@ function melissaCheckAnswer(event) {
 
     if (currentQuestion < melissaQuestions.length) {
         melissaQuiz();
+    }
+
+    else {
+        console.log("the game has ended!");
+        endQuiz();
+    }
+}
+
+marlynQuiz = function () {
+    rules.innerHTML = '';
+
+    let question = marlynQuestions[currentQuestion];
+
+    rules.appendChild(questionDisplay);
+
+    for (i = 0; i < question.choices.length; i++) {
+        questionDisplay.textContent = question.question;
+
+        let answersBtn = document.createElement("button");
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
+        answersBtn.textContent = question.choices[i];
+        rules.append(answersBtn);
+        answersBtn.addEventListener("click", marlynCheckAnswer);
+    };
+}
+
+function marlynCheckAnswer(event) {
+    let chosenAnswer = event.target.textContent;
+    console.log({ chosenAnswer });
+
+    if (chosenAnswer === marlynQuestions[currentQuestion].answer) {
+        console.log("correct!");
+        addPoints();
+    }
+
+    else {
+        console.log("incorrect!");
+        removePoints();
+        appendTime();
+    }
+    currentQuestion++;
+
+    if (currentQuestion < marlynQuestions.length) {
+        marlynQuiz();
     }
 
     else {

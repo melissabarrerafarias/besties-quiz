@@ -380,7 +380,7 @@ chrisQuiz = function () {
         questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-4";
         answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", chrisCheckAnswer);
@@ -425,7 +425,7 @@ function natalyQuiz() {
         questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-4";
         answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", natalyCheckAnswer);
@@ -470,7 +470,7 @@ function melissaQuiz() {
         questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-4";
         answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", melissaCheckAnswer);
@@ -514,7 +514,7 @@ marlynQuiz = function () {
         questionDisplay.textContent = question.question;
 
         let answersBtn = document.createElement("button");
-        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-6";
+        answersBtn.className = "choices-class btn btn-lg btn-outline-dark m-2 col-4";
         answersBtn.textContent = question.choices[i];
         rules.append(answersBtn);
         answersBtn.addEventListener("click", marlynCheckAnswer);

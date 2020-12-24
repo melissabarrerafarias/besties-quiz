@@ -589,9 +589,7 @@ function endQuiz(timer) {
 }
 
 playAgainBtn.addEventListener("click", function () {
-    scoreDiv.className = "display-none";
-    rules.className = "display";
-    chooseQuiz();
+    location.reload();
 })
 
 

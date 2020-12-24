@@ -15,7 +15,8 @@
 /* body classes */
 .rules-text {
     font-size: 15px; 
-    font-family: 'Source Code Pro'; 
+    font-family: 'Source Code Pro';  
+    max-width: 90%;
 }
 
 .display-none {
@@ -43,3 +44,11 @@
     font-size: 10px; 
     font-family: 'Source Code Pro';
 }
+
+
+/* @media (max-width: 575.98px) {
+    .rules-text {
+        margin: auto;
+        width: 50%;
+    }
+} */

@@ -11,21 +11,22 @@
 <body>
     <div class="jumbotron jumbotron-fluid header-background">
         <div class="container header-text">
-          <h1 class="display-4 text-center">The Ultimate Frienship Quiz</h1>
+          <h1 id = "ultimate-quiz" class="display-4 text-center">The Ultimate Frienship Quiz</h1>
           <p class="lead text-center">Who will be the best friend? Who pays the most attention?</p>
           <p id = "warning" class = "text-center scary-text">Play at your own risk...</p>
         </div>
       </div>
-      <div id = "rules" class = "text-center"> 
-          <p class = "rules-text">Here are the rules: </p>
-          <p class = "rules-text">You will have two minutes to answer 10 questions about one of your best friends.</p>
-          <p class = "rules-text">Everytime you get a question wrong, you will get a 10 second penalty and 5 points taken off your score.</p>
-          <p class = "rules-text">You shouldn't be scared... y'know your best friends right? Good luck, buddy.</p>
+      <div id = "rules" class = "row text-center"> 
+          <p class = "rules-text col-sm">Here are the rules: </p>
+          <p class = "rules-text col-sm">You will have two minutes to answer 10 questions about one of your best friends.</p>
+          <p class = "rules-text col-sm">Everytime you get a question wrong, you will get a 10 second penalty and 5 points taken off your score.</p>
+          <p class = "rules-text col-sm">You shouldn't be scared... y'know your best friends right? Good luck, buddy.</p>
       </div>
       <div class = "text-center scary-text">
       <button type="button" class="btn btn-lg btn-outline-danger" id = "start">Let's Play</button>
       </div>
-      <div id = "scoreContainer" class = "text-center"></div>
+      <div id = "scoreContainer" class = "text-center">
+      </div>
 </body>
 <script src = "js/script.js"></script>
 </html>

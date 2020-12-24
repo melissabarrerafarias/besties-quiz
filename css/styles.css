@@ -16,7 +16,7 @@
 .rules-text {
     font-size: 15px; 
     font-family: 'Source Code Pro';  
-    max-width: 90%;
+    /* max-width: 90%; */
 }
 
 .display-none {
@@ -46,9 +46,9 @@
 }
 
 
-/* @media (max-width: 575.98px) {
+@media (min-width: 375px) {
     .rules-text {
+        max-width: 90%;
         margin: auto;
-        width: 50%;
     }
-} */
+}
